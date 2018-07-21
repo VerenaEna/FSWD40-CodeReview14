@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  <h2 class="page-header"> Latest Events </h2>
+  <section class="card-group group">
+  <div class='card-deck'>
+  {% for event in event %}
+    <div class='card'>
+      <figure class="figure">
+        <img src="{{event.image}}" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+      </figure>
+
+      <div class='card-body'>
+        <h5 class='card-title'>{{event.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{event.type}}</h6>
+          <p class='card-text truncate'>{{event.description}}</p>
+          <a href="/event/details/{{event.id}}" class="btn btn-success">Read more</a>
+
+      </div>
+      <div class="card-footer">
+
+                <p class='card-text'>
+                  <small class='text-muted'>Start: {{event.startDate|date('F j, Y, g:i a')}}</small><br/>
+                </p>
+      </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

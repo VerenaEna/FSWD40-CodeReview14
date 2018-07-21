@@ -1,0 +1,41 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{event.name}} - {{event.title}}</h1>
+<div class="col-12 col-md-8">
+  ​<picture>
+    <source srcset="{{event.image}}" type="image/svg+xml">
+    <a href="{{event.eventUrl}}">
+    <figure class="figure">
+      <img src="{{event.image}}" class="img-fluid img-thumbnail" alt="{{event.image}}">
+      <figcaption class="figure-caption">A caption for the above image.</figcaption>
+      </figure>
+    </a>
+  </picture>
+  <section class="contact">
+    <h2> Ticket & Contact </h2>
+    <p class='card-text'>
+      {{event.locationName}}<br>
+      {{event.address}} {{event.nr}} <br>
+      {{event.postcode}} {{event.city}} <br><br>
+      email: {{event.email}}
+    </p>
+      <a href="{{event.eventUrl}}" class="btn btn-light">Buy Tickets</a>
+
+  </section>
+</div>
+<section class="col-md-4 article">
+<small class="text-muted">{{event.type}}</small>
+  <h4 class='title'>{{event.name}}</h4>
+  <h5 class="subtitle mb-2 text-muted">{{event.title}}</h5>
+  <p class='card-text'>{{event.description}}</p>
+  <p class='card-text'>
+    <small class='text-muted'>Event starts @{{event.startDate|date('F j, Y, g:i a')}}</small><br />
+    <small class='text-muted'>Event ends @{{event.endDate|date('F j, Y, g:i a')}}</small>
+  </p>
+  <a href="/" class="btn btn-success">Back to all Events</a>
+  <a href="/event/edit/{{event.id}}" class="btn btn-light">Edit</a>
+  <a href="/event/delete/{{event.id}}" class="btn btn-danger">Delete</a>
+</section>
+{% endblock %}

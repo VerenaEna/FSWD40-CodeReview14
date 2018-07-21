@@ -1,0 +1,34 @@
+.truncate {
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -o-ellipsis-lastline: 3;
+}
+.article {
+  /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  margin-top: 1.5rem;
+}
+
+.page-header {
+  margin-right: 50px;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  margin-top: 4rem;
+}
+footer {
+  background-color: grey;
+  color: white;
+  margin-top: 2rem;
+}
